@@ -1,4 +1,7 @@
-import React from 'react'
+import React from 'react';
+
+import {RouterProvider,createBrowserRouter, Outlet} from 'react-router-dom';
+
 
 const App = () => {
   return (
