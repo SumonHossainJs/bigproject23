@@ -5,6 +5,11 @@ $xl:1200px;
 $xxl:1400px;
 
 
+@mixin xxl {
+    @media screen and (max-width: ($xxl)) {
+      @content;
+    }
+  }
 @mixin lg {
     @media screen and (max-width: ($lg)) {
       @content;
@@ -15,3 +20,15 @@ $xxl:1400px;
       @content;
     }
   }
+  @mixin xl{
+    @media screen and (max-width:($xl)) {
+      @content;
+    }
+  }
+  @mixin md{
+    @media screen and (max-width:($md)) {
+      @content;
+    }
+  }
+
+ 

@@ -1,8 +1,25 @@
-import React from 'react'
+import './TopBox.scss';
+import { topDealUsers} from '../../data';
 
 const TopBox = () => {
   return (
-    <div>TopBox</div>
+    <div className='topBox'>
+      <h1>Top Deals</h1>
+      <div className="list">
+        {topDealUsers.map(user=>(
+          <div className="listItem" key={user.id}>
+              <div className="user">
+                <img src={user.img} alt="" srcset="" />
+                <div className="userText">
+                  <div className="userName">{user.username}</div>
+                  <div className="email">{user.email}</div>
+                </div>
+              </div>
+              <div className="amount">${user.amount}</div>
+          </div>
+        ))}
+      </div>
+      </div>
   )
 }
 
