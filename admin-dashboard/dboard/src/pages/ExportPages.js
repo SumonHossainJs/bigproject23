@@ -3,7 +3,7 @@ import Login from './login/Login';
 import Product from './product/Product';
 import Products from './products/Products';
 import User from './user/User';
-import Users from './users/User';
+import Users from './users/Users'
 
 
 
