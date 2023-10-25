@@ -8,6 +8,7 @@ import Menu from './Menu/Menu';
 import Navbar from './Navbar/Navbar';
 import PieChartBox from './PieChartBox/PieChartBox';
 import TopBox from './TopBox/TopBox';
+import Single from './Single/Single';
 
 
 export {
@@ -20,5 +21,6 @@ export {
     Menu, 
     Navbar, 
     PieChartBox, 
-    TopBox
+    TopBox, 
+    Single
 }
