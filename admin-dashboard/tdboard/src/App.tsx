@@ -41,7 +41,7 @@ const App = () =>{
                     element:<Users/>
                 },
                 {
-                    path:'/user/:id',
+                    path:'/users/:id',
                     element:<User/>
                 },
                 {
@@ -49,7 +49,7 @@ const App = () =>{
                     element:<Products/>
                 },
                 {
-                    path:"/product/:id",
+                    path:"/products/:id",
                     element:<Product/>
                 }
             ]
