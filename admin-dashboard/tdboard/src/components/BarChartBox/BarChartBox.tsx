@@ -1,6 +1,13 @@
-import React from 'react'
+import "./BarChartBox.scss";
 
-const BarChartBox = () => {
+type Props ={
+  title: string;
+  color:string; 
+  dataKey:string;
+  chartData:object[];
+}
+
+const BarChartBox = (props: Props) => {
   return (
     <div>BarChartBox</div>
   )
