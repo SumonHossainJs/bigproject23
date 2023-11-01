@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 // import userRoute from './routes/user.route.js';
 // import videoRoute from './routes/video.route.js';
-// import authRoute from './routes/auth.route.js';
+import authRoute from './routes/auth.route.js';
 // import commentRoute from './routes/commnet.route.js';
 import cookieParser from 'cookie-parser';
 
@@ -11,6 +11,16 @@ import cookieParser from 'cookie-parser';
 
 const app = express();
 dotenv.config();
+
+
+//   middlewares 
+
+app.use(express.json());
+app.use(cookieParser());
+
+// route handlders 
+
+app.use(authRoute);
 
 
 // Error handler
