@@ -1,7 +1,5 @@
 import { GridColDef } from "@mui/x-data-grid";
 import "./Users.scss";
-import { useState } from "react";
-import Add from "../../components/add/Add";
 import { DataTable } from "../../components/Export";
 import { userRows } from "../../Data";
 // import { useQuery } from "@tanstack/react-query";
@@ -55,7 +53,6 @@ const columns: GridColDef[] = [
 ];
 
 const Users = () => {
-  const [open, setOpen] = useState(false);
 
   // TEST THE API
 
@@ -71,7 +68,7 @@ const Users = () => {
     <div className="users">
       <div className="info">
         <h1>Users</h1>
-        <button onClick={() => setOpen(true)}>Add New User</button>
+        <button >Add New User</button>
       </div>
       <DataTable slug="users" columns={columns} rows={userRows} />
       {/* TEST THE API */}

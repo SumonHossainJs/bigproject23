@@ -1,8 +1,7 @@
-import { useState } from "react";
 import "./Products.scss";
 import { DataTable } from "../../components/Export";
 import  {GridColDef} from '@mui/x-data-grid';
-import { products, userRows } from "../../Data";
+import { products} from "../../Data";
 
 const columns: GridColDef[] =[
   {field:'id', headerName:"ID", width:80},
@@ -53,12 +52,11 @@ const columns: GridColDef[] =[
 ];
 
 const Products = () => {
-  const [open, setOpen] = useState(false);
   return (
     <div className="products">
       <div className="info">
         <h1>Products</h1>
-        <button onClick={() => setOpen(true)}>
+        <button>
           Add new Products
         </button>
       </div>
