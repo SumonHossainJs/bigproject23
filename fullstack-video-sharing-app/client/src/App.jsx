@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Home, Login, Video } from "./Pages";
 import { Navbar, Menu } from "./Components";
+import './Styles/Global.scss';
 
 const App = () => {
   const Layout = () => {
