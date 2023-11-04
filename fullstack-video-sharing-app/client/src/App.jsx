@@ -35,12 +35,13 @@ const router = createBrowserRouter([
         path: "/video/:id",
         element: <Video />,
       },
+      {
+        path: "/login",
+        element: <Login />,
+      },
     ],
   },
-  {
-    path: "/login",
-    element: <Login />,
-  },
+  
 ]);
 
 return <RouterProvider router={router}/>

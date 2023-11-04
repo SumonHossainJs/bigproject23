@@ -1,8 +1,21 @@
-import React from 'react'
+import "./Home.scss";
+import {Card} from '../../Components/index.js';
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div className='videoShowcase'>
+      <Card/>
+      <Card/>
+      <Card/>
+      <Card/>
+      <Card/>
+      <Card/>
+      <Card/>
+      <Card/>
+      <Card/>
+      <Card/>
+      <Card/>
+    </div>
   )
 }
 
