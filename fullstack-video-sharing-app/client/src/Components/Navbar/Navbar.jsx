@@ -8,10 +8,13 @@ import {Link} from 'react-router-dom';
 const Navbar = () => {
   return (
     <nav>
+      <Link to={'/'}>
+
       <div className="logo">
         <img src={Logo} alt="LamaTube Logo" />
         video
       </div>
+      </Link>
       <div className="searchbox">
         <input type="text" placeholder='Search' />
         <SearchOutlinedIcon/>

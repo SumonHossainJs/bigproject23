@@ -70,7 +70,7 @@ const Video = () => {
           <img src="https://images.unsplash.com/photo-1699014446393-a1e0f2e15336?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
           <input type="text" placeholder=" Add your Comment" />
         </div>
-        <div className="commnets">
+        <div className="comments">
           <Comment/>
           <Comment/>
           <Comment/>
