@@ -8,3 +8,7 @@ const router = express.Router();
 // update user
 router.put("/update/:id", verifyToken, Update);
 
+// delete user 
+
+router.delete("/delete/:id", verifyToken, deleteUser);
+
