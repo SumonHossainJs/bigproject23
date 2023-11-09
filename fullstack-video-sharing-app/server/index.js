@@ -11,6 +11,7 @@ import cookieParser from 'cookie-parser';
 
 const app = express();
 dotenv.config();
+const PORT = 5030;
 
 
 //   middlewares 
@@ -47,8 +48,8 @@ const connect = () =>{
 }
 
 
-app.listen(8000, () =>{
+app.listen(PORT, () =>{
 
     connect();
-    console.log("Connected to Server");
+    console.log(`Server is up and Running on PORT :http://localhost:${PORT}`);
 })
