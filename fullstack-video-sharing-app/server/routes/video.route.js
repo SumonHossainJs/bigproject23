@@ -11,7 +11,7 @@ router.post("/addVideo", verifyToken, addVideo);
 router.put("/video/:id", verifyToken, updateVideo);
 router.delete("/video/:id", verifyToken, deleteVideo);
 router.get("/find/:id", getVideo);
-router.put("/view", addView);
+router.put("/view/:id", addView);
 router.get("/random", randomVideo);
 router.get("/tag", getbyTag);
 router.get("/sub", verifyToken, sub);
