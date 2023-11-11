@@ -97,7 +97,14 @@ export const sub = async (req,res,next) =>{
         next(err);
     }
 }
-
+export const myVideo = async (req,res,next) =>{
+    try{
+        const myvideo = await Video.find({userId: req.user.id});
+        res.status(200).json(myvideo);
+    }catch(err){
+        next(err);
+    }
+}
 
 export const getbyTag = async (req,res,next) =>{
     try{
