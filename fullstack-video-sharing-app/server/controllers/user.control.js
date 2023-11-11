@@ -10,6 +10,7 @@ export const Update = async (req, res, next) => {
         { $set: req.body },
         { new: true }
       );
+
       res.status(200).json(updateduser);
     } catch (err) {
       next(err);
@@ -41,22 +42,24 @@ export const getUser = async (req, res, next) => {
 };
 export const subscribe = async (req, res, next) => {
   try {
-    await User.findByIdAndUpdate(req.user.id,{$push: {subscribedUser:req.params.id}});
-    await User.findByIdAndUpdate(req.params.id, {$inc:{subscribers:1}});
+   const isub = await User.findByIdAndUpdate(req.user.id, {
+      $push: { subscribedUser: req.params.id },
+    },{new: true});
+   const gotsub = await User.findByIdAndUpdate(req.params.id, { $inc: { subscribers: 1 } }, { new : true});
 
-    res.status(200).json("Subscription successfull");
-
+    res.status(200).json({isub , gotsub});
   } catch (err) {
     next(err);
   }
 };
 export const unsubscribe = async (req, res, next) => {
   try {
+    const isub = await User.findByIdAndUpdate(req.user.id, {
+      $pull: { subscribedUser: req.params.id },
+    }, { new : true});
+  const gotsub =  await User.findByIdAndUpdate(req.params.id, { $inc: { subscribers: -1 } }, { new: true});
 
-    await User.findByIdAndUpdate(req.user.id, {$pull:{ subscribedUser: req.params.id}});
-    await User.findByIdAndUpdate(req.params.id,{$inc:{subscribers: -1}});
-
-    res.status(200).json("Unsubscription successfull");
+    res.status(200).json({isub, gotsub});
   } catch (err) {
     next(err);
   }
@@ -66,7 +69,10 @@ export const like = async (req, res, next) => {
     const id = req.user.id;
     const videoId = req.params.id;
 
-    await Video.findByIdAndUpdate(videoId, {$addToSet:{likes:id}, $pull:{disLikes:id}});
+    await Video.findByIdAndUpdate(videoId, {
+      $addToSet: { likes: id },
+      $pull: { disLikes: id },
+    });
 
     res.status(200).json("The video has been Liked");
   } catch (err) {
@@ -74,14 +80,25 @@ export const like = async (req, res, next) => {
   }
 };
 export const disLike = async (req, res, next) => {
-
-    const id = req.user.id;
-    const videoId = req.params.id;
+  const id = req.user.id;
+  const videoId = req.params.id;
 
   try {
-    await Video.findByIdAndUpdate(videoId, {$addToSet:{disLikes:id}, $pull:{likes:id}});
+    await Video.findByIdAndUpdate(videoId, {
+      $addToSet: { disLikes: id },
+      $pull: { likes: id },
+    });
 
     res.status(200).json("The video has been disLiked");
+  } catch (err) {
+    next(err);
+  }
+};
+
+export const Alluser = async (req, res, next) => {
+  try {
+    const allUser = await User.find();
+    res.status(200).json(allUser);
   } catch (err) {
     next(err);
   }

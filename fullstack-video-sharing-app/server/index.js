@@ -1,7 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-// import userRoute from './routes/user.route.js';
+import userRoute from './routes/user.route.js';
 // import videoRoute from './routes/video.route.js';
 import authRoute from './routes/auth.route.js';
 // import commentRoute from './routes/commnet.route.js';
@@ -22,6 +22,7 @@ app.use(cookieParser());
 // route handlders 
 
 app.use(authRoute);
+app.use("/user",userRoute);
 
 
 // Error handler
