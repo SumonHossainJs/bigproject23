@@ -6,6 +6,7 @@ import videoRoute from './routes/video.route.js';
 import authRoute from './routes/auth.route.js';
 // import commentRoute from './routes/commnet.route.js';
 import cookieParser from 'cookie-parser';
+import cors from 'cors';
 
 
 
@@ -18,6 +19,7 @@ const PORT = 5030;
 
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors())
 
 // route handlders 
 
