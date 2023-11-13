@@ -6,14 +6,14 @@ import axios from 'axios';
 const Home = () => {
   const [videos, setvideos] = useState([]);
 
-  useEffect(()=>{
-    const fetchVideos = async () =>{
-      const res = await axios.get('http://localhost:5030/video/random');
+  useEffect(() => {
+    const fetchVideos = async () => {
+      const res = await axios.get(`http://localhost:5030/video/random`);
       setvideos(res.data);
-      console.log(red.data);
-    }
+    };
     fetchVideos();
-  })
+  }, []);
+
   return (
     <div className='videoShowcase'>
        {videos.map((video) => (
